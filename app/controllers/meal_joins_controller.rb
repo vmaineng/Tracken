@@ -1,0 +1,2 @@
+class MealJoinsController < ApplicationController
+end
