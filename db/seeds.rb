@@ -12,13 +12,15 @@ puts "Seeding users..."
     User.create(username: Faker::Internet.username,
     email: Faker::Internet.email, 
     password_digest: Faker::Internet.password,
-     firstName: Faker::Name.first_name,
-     lastName: Faker::Name.last_name
-     startingWeight: Faker::Number.between(from: 100, to: 200),
-     goalWeight: Faker::Number.between(from: 100, to: 150),
-     currentWeight: Faker::Number.between(from:100, to: 150)
+    firstName: Faker::Name.first_name,
+    lastName: Faker::Name.last_name,
+    startingWeight: Faker::Number.between(from: 100, to: 200),
+    goalWeight: Faker::Number.between(from: 100, to: 150),
+    currentWeight: Faker::Number.between(from:100, to: 150)
     )
 end
+
+puts "Seeding food..."
 
 15.times do
     Food.create(user: User.all.id.sample,
