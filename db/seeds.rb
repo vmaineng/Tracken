@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Seeding users..."
+
+3.times do
+    User.create(username: Faker::Internet.username,
+    email: Faker::Internet.email, 
+    password_digest: Faker::Internet.password,
+     firstName: Faker::Name.first_name,
+     lastName: Faker::Name.last_name
+     startingWeight: Faker::Number.between(from: 100, to: 200),
+     goalWeight: Faker::Number.between(from: 100, to: 150),
+     currentWeight: Faker::Number.between(from:100, to: 150)
+    )
+end
+
+15.times do
+    Food.create(user: User.all.id.sample,
+         name: Faker::Food.ingredient, 
+         description: Faker::Food.description
+    )
+end

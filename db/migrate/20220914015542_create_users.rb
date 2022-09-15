@@ -8,8 +8,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :lastName
       t.integer :startingWeight
       t.integer :goalWeight
-      t.string :currentWeight
-      t.string :integer
+      t.integer :currentWeight
 
       t.timestamps
     end
