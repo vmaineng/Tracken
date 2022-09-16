@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2022_09_14_214650) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
+    t.string "image"
     t.text "description"
     t.integer "serving"
     t.integer "carbs"
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 2022_09_14_214650) do
     t.string "firstName"
     t.string "lastName"
     t.string "email"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

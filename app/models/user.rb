@@ -1,8 +1,9 @@
 class User < ApplicationRecord
+    has_secure_password
     has_many :favorites
     has_many :profiles
 
     has_many :foods, through: :favorites
 
-    validates :users, uniqueness: true
+    validates :username, uniqueness: true
 end

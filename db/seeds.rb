@@ -20,11 +20,14 @@ puts "Seeding users..."
     )
 end
 
+
 puts "Seeding food..."
 
 15.times do
-    Food.create(user: User.all.id.sample,
+    Food.create(
          name: Faker::Food.ingredient, 
          description: Faker::Food.description
     )
 end
+
+# got rid of User.all.id.sample temporarily since I go an id error since it was not finding user in Food model
